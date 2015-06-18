@@ -1,0 +1,42 @@
+﻿@model Taqdees.Models.Admin
+
+@{
+    Layout = "~/Views/Shared/layout1.cshtml";
+}
+@using (Html.BeginForm("signup", "Admin", FormMethod.Post))
+{
+    <div class="row-fluid">
+        <div class="span12 text-center">
+            <h2>Sign Up</h2>
+            <br />
+
+            @Html.LabelFor(m => m.First_name, "First Name ", new { id = "fname" })
+            @Html.TextBoxFor(m => m.First_name, new { type = "text", placeholder = "First Name" })
+            @Html.ValidationMessageFor(m => m.First_name)
+            <br /><br />
+
+            @Html.LabelFor(m =>m.Last_Name, "Last Name ", new { id = "lname" })
+            @Html.TextBoxFor(m => m.Last_Name, new { type = "text", placeholder = "Last Name" })
+            @Html.ValidationMessageFor(m => m.Last_Name)
+            <br /><br />
+
+            @Html.LabelFor(m => m.Email, "Enter Email ", new { id = "email" })
+            @Html.TextBoxFor(m => m.Email, new { type = "email", placeholder = "Email" })
+            @Html.ValidationMessageFor(m => m.Email)
+            <br /><br />
+
+            @Html.LabelFor(m => m.Username, "Username ", new { id = "uname" })
+            @Html.TextBoxFor(m => m.Username, new { type = "text", placeholder = "Username" })
+            @Html.ValidationMessageFor(m => m.Username)
+            <br /><br />
+
+            @Html.LabelFor(m => m.Password, "Password ", new { id = "pass" })
+            @Html.TextBoxFor(m => m.Password, new { type = "password", placeholder = "Password" })
+            @Html.ValidationMessageFor(m => m.Password)
+            <br /><br />
+            <button type="submit" class="btn btn-success">Submit</button>
+
+        </div>
+    </div>
+
+}
